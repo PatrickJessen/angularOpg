@@ -1,0 +1,21 @@
+<div *ngIf="cars">
+    <button type="button" (click)="AddCar()" class="btn btn-primary">Add Car</button>
+    <button type="button" (click)="Logout()" class="btn btn-primary">Logout</button>
+    <table class="table">
+        <thead>
+            <th scope="col">Rank</th>
+            <th scope="col">Model</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Change Quantity %</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of cars let odd=odd" 
+            [style.background-color]="odd?'gray':null">
+            <td>{{data.rank}}</td>
+            <td>{{data.model}}</td>
+            <td>{{data.quantity}}</td>
+            <td>{{data.changeQuantityPercent}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
